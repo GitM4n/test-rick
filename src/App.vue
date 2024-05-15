@@ -43,9 +43,12 @@ const getCards = async () => {
       characters.value = []
   }
   
-  loadingCards.value = false
-  document.body.classList.remove('lock')
-  window.scrollTo({ top: 400, behavior: 'smooth' })
+  setTimeout(() => {
+    loadingCards.value = false
+    document.body.classList.remove('lock')
+    window.scrollTo({ top: 400, behavior: 'smooth' })
+  }, 2000)
+ 
 
 }
 
