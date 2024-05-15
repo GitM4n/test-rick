@@ -56,10 +56,21 @@
   box-sizing: border-box;
   margin: 0;
   font-weight: normal;
+  padding: 0;
 }
 
+html{
+  font-size: calc(8px + 2 * ((100vw - 320px) / 1140));
+}
+
+@media (min-width:1460px) {  
+  html{
+    font-size: 10px;
+  }
+} 
+
 body {
-  min-height: 100vh;
+
   color: var(--color-text);
   background: var(--color-background);
   transition:
@@ -83,4 +94,19 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(39, 43, 51);
 }
+
+
+
+ul,
+ol,
+li{
+  list-style: none;
+}
+
+
+body.lock{
+  overflow: hidden;
+}
+
