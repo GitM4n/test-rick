@@ -40,7 +40,7 @@ const setStatus = (status:string) => {
         <div class="modal__inner" @click.stop>
             <div class="modal__inputs">
                 <div class="input__name">
-                    <label for="name">Character Name</label>
+                    <label for="name">Имя персонажа</label>
                     <input type="text" id="name" v-model="currentName" @input="openName=true">
                     <ul class="name-options" v-if="openName && currentName.length > 0">
                         <li class="name-option" @click="setName(currentName)">{{ currentName }}</li>
@@ -51,7 +51,7 @@ const setStatus = (status:string) => {
                 </div>
               
                 <div class="input__status">
-                   <p for="status">Character status</p>
+                   <p for="status">Статус персонажа</p>
                    <div class="input__status_content">
                         <p class="current-status" @click="openStatus=true" :style="{backgroundColor: currentStatus === 'alive' ? 'green' : currentStatus === 'dead' ? 'red' : 'gray'}">{{currentStatus}}</p>
                         <ul class="status-options" v-if="openStatus">

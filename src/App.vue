@@ -108,7 +108,6 @@ onMounted(async () => {
             <PaginationComponent v-if="characters.length > 0" :pages-arr="totalPages" :current-page="currentPage" @update="updatePage"  />
           </div>
       </div>
-
       <ModalComponent @click="isModal=false" :is-open="isModal" @submit="setFilters"/>
     </div>
   <LoaderComponent v-show="loadingCards"/>
