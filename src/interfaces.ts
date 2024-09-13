@@ -8,4 +8,4 @@ export interface ICharacter {
     image: string
     status: string
     species: string
-  }
+}

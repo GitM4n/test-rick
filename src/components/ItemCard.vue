@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import type { ICharacter } from '@/interfaces';
+import { onMounted, ref } from "vue";
+import type { ICharacter } from "@/interfaces";
 
 const props = defineProps<{
-  character: ICharacter,
-}>()
+  character: ICharacter;
+}>();
 
-const episodeName = ref<string>('')
+const episodeName = ref<string>("");
 
 const getEpisodeName = async () => {
-  const result = await (await fetch(props.character.episode[0])).json()
-  episodeName.value = result.name || 'Unknown'
-}
+  const result = await (await fetch(props.character.episode[0])).json();
+  episodeName.value = result.name || "Unknown";
+};
 
 onMounted(async () => {
-  await getEpisodeName()
-})
+  await getEpisodeName();
+});
 </script>
 
 <template>
@@ -30,7 +30,12 @@ onMounted(async () => {
           <div
             class="indicator"
             :style="{
-              backgroundColor:  props.character.status  === 'Alive' ? 'green' : props.character.status === 'unknown' ? 'gray' : 'red'
+              backgroundColor:
+                props.character.status === 'Alive'
+                  ? 'green'
+                  : props.character.status === 'unknown'
+                  ? 'gray'
+                  : 'red',
             }"
           ></div>
           <p class="status">{{ props.character.status }}</p>
@@ -51,8 +56,6 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-
-
 .character {
   display: flex;
   gap: 10px;
@@ -60,19 +63,16 @@ onMounted(async () => {
   border-radius: 16px;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-
 }
 
-
-
-.character__image img{
+.character__image img {
   height: 100%;
   margin: 0px;
   object-position: center center;
   object-fit: cover;
 }
 
-.character__content{
+.character__content {
   padding: 10px 15px;
 }
 
@@ -110,17 +110,14 @@ onMounted(async () => {
   color: rgb(158, 158, 158);
 }
 
-
-
-@media (max-width:599px){
-  .character{
+@media (max-width: 599px) {
+  .character {
     flex-direction: column;
   }
 
-  .character__image img{
+  .character__image img {
     width: 100%;
     max-height: 400px;
   }
 }
-
 </style>
