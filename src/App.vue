@@ -85,8 +85,11 @@ onMounted(async () => {
       <div class="container">
         <div class="cards-grid">
           <ul class="cards">
-            <li v-if="characters.length === 0" class="no-result">
-              No search results
+            <li 
+              v-if="characters.length === 0" 
+              class="no-result"
+              >
+                No search results
               <span 
                 style="color: orange; cursor: pointer" 
                 @click="reset()"
